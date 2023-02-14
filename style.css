@@ -1,0 +1,67 @@
+/* table button wrong & right  */
+body {
+  margin: 0;
+  padding: 0;
+  background: url("https://picsum.photos/200/300/?blur");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.commonButtonCss {
+   
+  border: 1px dashed lightcoral;
+}
+
+.commonButtonCss:hover {
+  background-color: coral;
+}
+.button-style{
+   padding: 2%;
+}
+.css-serial {
+    counter-reset: serial-number;  /* Set the serial number counter to 0 */
+  }
+  
+  .css-serial td:first-child:before {
+    counter-increment: serial-number;  /* Increment the serial number counter */
+    content: counter(serial-number);  /* Display the counter */
+  }
+
+
+  
+table,
+td,
+tr {
+    border-radius: 8px;
+    border: 2px solid;
+    text-align: center;
+    border-collapse: collapse;
+    color: antiquewhite;
+
+
+}
+
+tr:hover {
+    background-color: coral;
+}
+.bg-color{
+    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+
+}
+
+.head-text{
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    border-radius: 5px;
+}
+
+.text{
+    color: rgb(211, 161, 203);
+    text-shadow: 1px 1px 2px #000000;
+}
+  
+
+input:active, input:focus{
+  box-shadow: none;
+  outline: none;
+}
