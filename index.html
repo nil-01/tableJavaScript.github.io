@@ -15,6 +15,7 @@
       <main>
         <artice id="mainContainer">
             <button id="addRowBtn" class="btn btn-primary  btn-block commonButtonCss mt-3" onclick="addRow()">ADD ROW</button>
+              <div  style=overflow-x:auto;>
             <table class="table table-striped css-serial  mt-4 bg-color" id="inputTable" style="overflow-x: auto;">
               <thead>
                 <tr>
@@ -66,6 +67,7 @@
                 </tr>
               </tbody>
             </table>
+          </div>
             <button id="addRowBtn" class="btn btn-primary  btn-block commonButtonCss" onclick="generateReport()">Save</button>
         </artice>
         <div class="row">
@@ -80,7 +82,7 @@
                   <input type="text" class="form-control form-input" placeholder="Search..." id="inputSearch"  onkeyup="search()">
                   <span class="left-pan"><i class="fa fa-microphone"></i></span>
             </div>
-         <div id="report" class="mt-5"></div>
+         <div id="report" class="mt-5" style=overflow-x:auto;></div>
       </main>
     </div>
   
