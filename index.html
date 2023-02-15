@@ -15,8 +15,8 @@
       <main>
         <artice id="mainContainer">
             <button id="addRowBtn" class="btn btn-primary  btn-block commonButtonCss mt-3" onclick="addRow()">ADD ROW</button>
-              <div  style=overflow-x:auto;>
-            <table class="table table-striped css-serial  mt-4 bg-color" id="inputTable" style="overflow-x: auto;">
+            <div  style=overflow-x:auto;>
+            <table class="table table-striped css-serial  mt-4 bg-color" id="inputTable" >
               <thead>
                 <tr>
                   <th scope="col" class="text">No.</th>
@@ -32,7 +32,7 @@
                   <td><input required  type="text" class="form-control  studentName"></td>
                   <td><input required type="text" class="form-control subject"></td>
                   <td><input required  type="text" class="form-control studentMarks"></td>
-                  <td  class="button-style"><span><button id="addRowBtn" class="btn btn-success  btn-block">Pass</button></span><span> <button id="addRowBtn" class="btn btn-danger  btn-block">Fail</button></span></td>
+                  <td  class="button-style"><span><button id="addRowBtn" class="btn btn-success  btn-block">Pass</button></span><span class="btn-style"><button id="addRowBtn" class="btn btn-danger  btn-block">Fail</button></span></td>
 
                 </tr>
                 <tr>
@@ -82,9 +82,11 @@
                   <input type="text" class="form-control form-input" placeholder="Search..." id="inputSearch"  onkeyup="search()">
                   <span class="left-pan"><i class="fa fa-microphone"></i></span>
             </div>
-         <div id="report" class="mt-5" style=overflow-x:auto;></div>
+         <div id="report" class="mt-5" style=overflow-x:auto; ></div>
       </main>
     </div>
+
+   
   
     <script src="script.js"></script>
     
