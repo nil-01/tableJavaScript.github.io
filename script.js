@@ -28,8 +28,16 @@ function addRow() {
 }
 //  Remove Row Function
 function removeRow(id){
- id.parentElement.parentElement.parentElement.remove();
- count--;
+if (confirm("Really want to delete the record !!") == true) {
+  id.parentElement.parentElement.parentElement.remove();
+  temp=count;
+  count--;
+  alert("Record is successfully deleted")
+
+  } else {
+    alert("Record is not deleted")
+  }
+  generateReport();
 }
 
 //  Getting Data in Row form
