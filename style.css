@@ -17,6 +17,7 @@ body {
 }
 .button-style{
    padding: 2%;
+   margin: 2%;
 }
 .css-serial {
     counter-reset: serial-number;  /* Set the serial number counter to 0 */
@@ -65,3 +66,26 @@ input:active, input:focus{
   box-shadow: none;
   outline: none;
 }
+
+.btn-style{
+  padding: 2%;
+}
+
+.over-flow{
+  overflow-x: auto;
+}
+
+@media (max-width: 575.98px) { 
+.mainTable  tr td {
+    width: 100%;
+  }
+  .mainTable tr {
+
+     display: flex;
+     flex-direction: column;
+  }
+  .mainTable th{
+    display: none;
+  }
+ }
+
