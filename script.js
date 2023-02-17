@@ -68,13 +68,13 @@ function removeRow(id) {
     alert("Record is not deleted")
   }
   generateReport();
-  generatePercentageData()
+  generatePercentageData();
 }
 
 
 //  Getting Data in array form
 function generateReport() {
-
+  generatePercentageData();
   var studentName = Array.from(document.getElementsByClassName("studentName"));
   var subjectName = Array.from(document.getElementsByClassName("subject"));
   var studentMarks = Array.from(document.getElementsByClassName("studentMarks"));
