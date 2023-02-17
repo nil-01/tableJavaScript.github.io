@@ -1,4 +1,3 @@
-
 var btnId = 6;  //For giving dynamic Id to Accept Button
 var btnId2 =-6; //For giving dynamic Id to Reject Button
 var count = 1;  //For Giving Dynamic Id to Delete Button
