@@ -14,10 +14,11 @@
       <header class="h1 row head-text bg-color mt-2"><marquee>ANNUAL MARKSHEET</marquee></header> 
       <main>
         <artice id="mainContainer">
-            <button id="addRowBtn" class="btn btn-primary  btn-block commonButtonCss mt-3" onclick="addRow()">ADD ROW</button>
+            <button id="addRowBtn" class="btn btn-primary flex-fi commonButtonCss mt-3" onclick="addRow()">ADD ROW</button>
             <div  style=overflow-x:auto;>
-            <table class="table table-striped css-serial  mt-4 bg-color" id="inputTable" >
+            <table class="table table-striped css-serial  mt-4 bg-color mainTable" id="inputTable" >
               <thead>
+               
                 <tr>
                   <th scope="col" class="text">No.</th>
                   <th scope="col" class="text">Name</th>
@@ -29,46 +30,46 @@
               <tbody>
                 <tr>
                   <td></td>
-                  <td><input required  type="text" class="form-control  studentName"></td>
-                  <td><input required type="text" class="form-control subject"></td>
-                  <td><input required  type="text" class="form-control studentMarks"></td>
-                  <td  class="button-style"><span><button id="addRowBtn" class="btn btn-success  btn-block">Pass</button></span><span class="btn-style"><button id="addRowBtn" class="btn btn-danger  btn-block">Fail</button></span></td>
+                  <td><input required  type="text" class="form-control  studentName" placeholder="Name"></td>
+                  <td><input required type="text" class="form-control subject" placeholder="Subject Name"></td>
+                  <td><input required  type="text" class="form-control studentMarks" placeholder="Marks"></td>
+                  <td  class="button-style"><span><button id="1" onclick="btnFunction(this)"  class="btn btn-outline-success mt-1 btn-block">Accepted</button></span><span class="btn-style"><button  onclick="btnFunction2(this)" id="-1" class="btn btn-outline-danger  btn-block mt-1">Reject</button></span></td>
 
                 </tr>
                 <tr>
                   <td ></td>
-                  <td><input type="text" class="form-control studentName"></td>
-                  <td><input type="text" class="form-control subject"></td>
-                  <td><input type="text" class="form-control  studentMarks"></td>
-                  <td  class="button-style"><span><button id="addRowBtn" class="btn   btn-success  btn-block">Pass</button></span><span> <button id="addRowBtn" class="btn btn-danger  btn-block">Fail</button></span></td>
+                  <td><input type="text" class="form-control studentName"  placeholder="Name"></td>
+                  <td><input type="text" class="form-control subject" placeholder="Subject Name"></td>
+                  <td><input type="text" class="form-control  studentMarks" placeholder="Marks"></td>
+                  <td  class="button-style"><span><button id="2" onclick="btnFunction(this)"  class="btn   btn-outline-success mt-1 btn-block">Accepted</button></span><span> <button onclick="btnFunction2(this)"  id="-2" class="btn btn-outline-danger mt-1 btn-block">Reject</button></span></td>
                 </tr>
                 <tr>
                   <td ></td>
-                  <td ><input required type="text" class="form-control studentName"></td>
-                  <td ><input required type="text" class="form-control subject"></td>
-                  <td><input required type="text" class="form-control  studentMarks"></td>
-                  <td  class="button-style"><div><span><button id="addRowBtn" class="btn  btn-success  btn-block">Pass</button></span><span> <button id="addRowBtn" class="btn btn-danger  btn-block">Fail</button></span></div></td>
+                  <td ><input required type="text" class="form-control studentName"  placeholder="Name"></td>
+                  <td ><input required type="text" class="form-control subject" placeholder="Subject Name"></td>
+                  <td><input required type="text" class="form-control  studentMarks" placeholder="Marks"></td>
+                  <td  class="button-style"><div><span><button id="3"  onclick="btnFunction(this)"  class="btn  btn-outline-success mt-1 btn-block">Accepted</button></span><span> <button onclick="btnFunction2(this)" id="-3" class="btn btn-outline-danger mt-1 btn-block">Reject</button></span></div></td>
                 </tr>
                 <tr>
                   <td ></td>
-                  <td><input required type="text" class="form-control studentName"></td>
-                  <td><input required  type="text" class="form-control subject"></td>
-                  <td><input required type="text" class="form-control  studentMarks"></td>
-                  <td  class="button-style"><span><button id="addRowBtn" class="btn  btn-success  btn-block">Pass</button></span><span> <button id="addRowBtn" class="btn btn-danger  btn-block">Fail</button></span></td>
+                  <td><input required type="text" class="form-control studentName"  placeholder="Name"></td>
+                  <td><input required  type="text" class="form-control subject" placeholder="Subject Name"></td>
+                  <td><input required type="text" class="form-control  studentMarks" placeholder="Marks"></td>
+                  <td  class="button-style"><span><button id="4"  onclick="btnFunction(this)"  class="btn  btn-outline-success mt-1 btn-block">Accepted</button></span><span> <button onclick="btnFunction2(this)"  id="-4" class="btn btn-outline-danger mt-1 btn-block">Reject</button></span></td>
 
                 </tr>
                 <tr>
                   <td scope="row"></th>
-                  <td><input required  type="text" class="form-control studentName"></td>
-                  <td><input required  type="text" class="form-control subject"></td>
-                  <td><input required type="text" class="form-control  studentMarks"></td>
-                  <td  class="button-style"><span><button id="addRowBtn" class="btn  btn-success  btn-block">Pass</button></span><span> <button id="addRowBtn" class="btn btn-danger  btn-block">Fail</button></span></td>
+                  <td><input required  type="text" class="form-control studentName"  placeholder="Name"></td>
+                  <td><input required  type="text" class="form-control subject" placeholder="Subject Name"></td>
+                  <td><input required type="text" class="form-control  studentMarks" placeholder="Marks"></td>
+                  <td  class="button-style"><span><button id="5"  onclick="btnFunction(this)"  class="btn  btn-outline-success mt-1 btn-block">Accepted</button></span><span> <button onclick="btnFunction2(this)"  id="-4" class="btn btn-outline-danger mt-1 btn-block">Reject</button></span></td>
 
                 </tr>
               </tbody>
             </table>
           </div>
-            <button id="addRowBtn" class="btn btn-primary  btn-block commonButtonCss" onclick="generateReport()">Save</button>
+            <button id="addRowBtn" class="btn btn-primary   commonButtonCss flex-fill" onclick="generateReport();generatePercentageData()">Save</button>
         </artice>
         <div class="row">
           <div class="col-sm-6" ><select class="form-select mt-4" id="sortingList" onchange="gettingList()" >
@@ -82,7 +83,11 @@
                   <input type="text" class="form-control form-input" placeholder="Search..." id="inputSearch"  onkeyup="search()">
                   <span class="left-pan"><i class="fa fa-microphone"></i></span>
             </div>
-         <div id="report" class="mt-5" style=overflow-x:auto; ></div>
+          <!-- Report Table -->
+         <div id="report" class="mt-5" style=overflow-x:auto; >
+        </div>
+         <!-- Percentage Table -->
+         <div id="percentageTable" class="mt-5" style="overflow-x: auto;"></div>
       </main>
     </div>
 
