@@ -103,8 +103,8 @@ function generateReport() {
 function isRowEmpty(arr){
     let temp=0;
     arr.forEach((element)=> {
-      if (element[0] == "" || element[1] == "" || element[2] == "") {
-          alert(`All field are mandatory and Please fill the empty accepted row`);
+      if ((element[0] == '' || element[0] == null || !isNaN(element[0])) || (element[0] == '' || element[0] == null || !isNaN(element[0])) || (element[2] == null || isNaN(element[2]) || element[2] < 0 || element[2] > 100 || element[2] == '')) {
+          alert(`All field are mandatory and Please fill the empty accepted row Or Wrong Input field (Red In color correct it)`);
           temp =-1;
       }
     }) 
