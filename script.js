@@ -11,9 +11,9 @@ function addRow() {
   var cell4 = row.insertCell(3);
   var cell5 = row.insertCell(4);
 
-  cell2.innerHTML = `<td><input type="text" class="form-control studentName"  placeholder="Name" ></td>`;
-  cell3.innerHTML = `<td><input type="text" class="form-control subject" placeholder="Subject Name"></td>`;
-  cell4.innerHTML = `<td><input type="text" class="form-control studentMarks" placeholder="Marks"></td>`;
+  cell2.innerHTML = `<td><input required type="text" class="form-control studentName"  placeholder="Name" ></td>`;
+  cell3.innerHTML = `<td><input required type="text" class="form-control subject" placeholder="Subject Name"></td>`;
+  cell4.innerHTML = `<td><input required type="text" class="form-control studentMarks" placeholder="Marks"></td>`;
 
   cell5.innerHTML = `<td><span><button id=${btnId} onclick="btnFunction(this)" class="btn mt-1 btn-outline-success btn-block">Accepted</button></span><span style="padding:2%" ><button id=${btnId2} onclick="btnFunction2(this)" class="btn mt-1 btn-outline-danger  btn-block">Reject</button></span><span style="padding:2%"><button class="btn mt-1 btn-danger btn-block" id=${count} onclick="removeRow(this)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
@@ -47,11 +47,6 @@ function btnFunction2(id) {
   id.setAttribute("class", "btn-danger");
   
 }
-
-
-
-
-
 //  Remove Row Function
 function removeRow(id) {
   if (confirm("Really want to delete the record !!") == true) {
@@ -86,24 +81,20 @@ function generateReport() {
       tempArr.push(studentMarks[index].value);
       arr.push(tempArr);
     }
-   
   });
-
   // Calling createtable function to create Table
   var result =isRowEmpty(arr);
   
-  // Condition for empty row
   if(result != -1){
      createTable(arr);
      generatePercentageData();
   }
 }
-
-//validation for row empty
+//validation for row empty and wrong input
 function isRowEmpty(arr){
     let temp=0;
     arr.forEach((element)=> {
-      if ((element[0] == '' || element[0] == null || !isNaN(element[0])) || (element[0] == '' || element[0] == null || !isNaN(element[0])) || (element[2] == null || isNaN(element[2]) || element[2] < 0 || element[2] > 100 || element[2] == '')) {
+      if (element[0] == ''|| element[0] == null || !isNaN(element[0]) || element[1] == '' || element[1] == null || !isNaN(element[1]) || element[2] == null || isNaN(element[2]) || element[2] < 0 || element[2] > 100 || element[2] == '') {
           alert(`All field are mandatory and Please fill the empty accepted row Or Wrong Input field (Red In color correct it)`);
           temp =-1;
       }
@@ -126,7 +117,6 @@ function generatePercentageData() {
     arr2.push(tempArr2);}
    
   });
-
   var k = 0;
   for (i = 0; i < arr2.length; i++) {
     if (!(studentNames.includes(arr2[i][0]))) {
