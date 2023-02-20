@@ -8,13 +8,23 @@ body {
 }
 
 .commonButtonCss {
-   
-  border: 1px dashed lightcoral;
+	box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 30px;
+	padding: 10px;
+	letter-spacing: 1px;
+	overflow: hidden;
+	color: #fff;
+	font-weight: 400px;
+	z-index: 1;
+	transition: 0.5s;
+	backdrop-filter: blur(15px);
+}
+.commonButtonCss:hover {
+  letter-spacing: 3px;
 }
 
-.commonButtonCss:hover {
-  background-color: coral;
-}
 .button-style{
    padding: 2%;
    margin: 2%;
@@ -29,7 +39,23 @@ body {
   }
 
 
-  
+.maintable{
+	z-index: 1;
+	transition: 0.5s;
+	backdrop-filter: blur(15px);
+}
+
+#outputTable{
+	z-index: 1;
+	transition: 0.5s;
+	backdrop-filter: blur(15px);
+}
+
+#outputTable2{
+	z-index: 1;
+	transition: 0.5s;
+	backdrop-filter: blur(15px);
+}
 table,
 td,
 tr {
@@ -51,9 +77,18 @@ tr:hover {
 }
 
 .head-text{
-    color: white;
-    text-shadow: 2px 2px 4px #000000;
-    border-radius: 5px;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 30px;
+	padding: 10px;
+	letter-spacing: 1px;
+	overflow: hidden;
+	color: #fff;
+	font-weight: 400px;
+	z-index: 1;
+	transition: 0.5s;
+	backdrop-filter: blur(15px);
 }
 
 .text{
@@ -88,4 +123,7 @@ input:active, input:focus{
     display: none;
   }
  }
+
+
+ /* new */
 
