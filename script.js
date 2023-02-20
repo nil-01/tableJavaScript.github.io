@@ -3,8 +3,6 @@ var btnId2 =-6; //For giving dynamic Id to Reject Button
 var count = 1;  //For Giving Dynamic Id to Delete Button
 //Add Row Function
 function addRow() {
-
-
   var table = document.getElementById("inputTable");
   var row = table.insertRow(table.length);
   row.insertCell(0);
@@ -17,7 +15,7 @@ function addRow() {
   cell3.innerHTML = `<td><input type="text" class="form-control subject" placeholder="Subject Name"></td>`;
   cell4.innerHTML = `<td><input type="text" class="form-control studentMarks" placeholder="Marks"></td>`;
 
-  cell5.innerHTML = `<td><span><button id=${btnId} onclick="btnFunction(this)" class="btn mt-1  btn-outline-success  btn-block">Accepted</button></span><span style="padding:2%" ><button id=${btnId2} onclick="btnFunction2(this)" class="btn mt-1 btn-outline-danger  btn-block">Reject</button></span><span style="padding:2%"><button class="btn mt-1 btn-danger btn-block" id=${count} onclick="removeRow(this)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+  cell5.innerHTML = `<td><span><button id=${btnId} onclick="btnFunction(this)" class="btn mt-1 btn-outline-success btn-block">Accepted</button></span><span style="padding:2%" ><button id=${btnId2} onclick="btnFunction2(this)" class="btn mt-1 btn-outline-danger  btn-block">Reject</button></span><span style="padding:2%"><button class="btn mt-1 btn-danger btn-block" id=${count} onclick="removeRow(this)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
         <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
       </svg></button></span></td>`;
@@ -34,22 +32,22 @@ function btnFunction(id) {
   id.parentElement.nextElementSibling.firstElementChild.classList.add("btn-block");
   id.parentElement.nextElementSibling.firstElementChild.classList.remove("btn-danger");
   id.parentElement.nextElementSibling.firstElementChild.classList.add("btn-outline-danger");
-  
-  id.setAttribute("class", "btn-success")
-
+  id.parentElement.parentElement.parentElement.classList.add("Accepted");
+  id.setAttribute("class", "btn-success");
+ 
 }
 
 function btnFunction2(id) {
-
   id.parentElement.previousElementSibling.firstElementChild.classList.add("btn");
-  
   id.parentElement.previousElementSibling.firstElementChild.classList.add("mt-1");
   id.parentElement.previousElementSibling.firstElementChild.classList.add("btn-block");
   id.parentElement.previousElementSibling.firstElementChild.classList.remove("btn-success");
   id.parentElement.previousElementSibling.firstElementChild.classList.add("btn-outline-success");
-  id.setAttribute("class", "btn-danger")
-
+  id.parentElement.parentElement.parentElement.classList.remove("Accepted");
+  id.setAttribute("class", "btn-danger");
+  
 }
+
 
 
 
@@ -69,36 +67,51 @@ function removeRow(id) {
   }
   generateReport();
   generatePercentageData();
+ 
 }
 
 
 //  Getting Data in array form
 function generateReport() {
-  generatePercentageData();
   var studentName = Array.from(document.getElementsByClassName("studentName"));
   var subjectName = Array.from(document.getElementsByClassName("subject"));
   var studentMarks = Array.from(document.getElementsByClassName("studentMarks"));
-
   var arr = [];
-
-
   studentName.forEach((element, index) => {
-    var tempArr = [];
-    tempArr.push(element.value);
-    tempArr.push(subjectName[index].value);
-    tempArr.push(studentMarks[index].value);
-    arr.push(tempArr);
-
+    if(element.parentElement.parentElement.classList.contains("Accepted") )
+    { 
+      var tempArr = [];
+      tempArr.push(element.value);
+      tempArr.push(subjectName[index].value);
+      tempArr.push(studentMarks[index].value);
+      arr.push(tempArr);
+    }
+   
   });
 
-  //   Calling createtable function to create Table
-  createTable(arr)
-
+  // Calling createtable function to create Table
+  var result =isRowEmpty(arr);
+  
+  // Condition for empty row
+  if(result != -1){
+     createTable(arr);
+     generatePercentageData();
+  }
 }
 
+//validation for row empty
+function isRowEmpty(arr){
+    let temp=0;
+    arr.forEach((element)=> {
+      if (element[0] == "" || element[1] == "" || element[2] == "") {
+          alert(`All field are mandatory and Please fill the empty accepted row`);
+          temp =-1;
+      }
+    }) 
+    return temp;
+  }
+
 // Percentage Data in array form
-
-
 function generatePercentageData() {
   var studentName = Array.from(document.getElementsByClassName("studentName"));
   var studentMarks = Array.from(document.getElementsByClassName("studentMarks"));
@@ -107,10 +120,11 @@ function generatePercentageData() {
   var totalOcc = [];
   var arr2 = [];
   studentName.forEach((element, index) => {
-    var tempArr2 = [];
+    if(element.parentElement.parentElement.classList.contains("Accepted")){ var tempArr2 = [];
     tempArr2.push(element.value);
     tempArr2.push(studentMarks[index].value);
-    arr2.push(tempArr2);
+    arr2.push(tempArr2);}
+   
   });
 
   var k = 0;
@@ -278,7 +292,7 @@ function validsubject(e) {
   var value = ele.value;
 
   if (value == '' || value == null || !isNaN(value)) {
-    alert("Enter Subject Name")
+    alert("Enter Valid Subject Name")
     ele.style.backgroundColor = "red";
     ele.style.color = "white";
   }
@@ -423,6 +437,6 @@ function search() {
     }
   }
 }
+// validation on save button
+
 addevents();
-
-
